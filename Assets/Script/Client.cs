@@ -13,6 +13,12 @@ public class Client : MonoBehaviour {
     private StreamWriter writer;
     private StreamReader reader;
 
+    public string clientName;
+
+    private void Start() {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public bool ConnectToServer(string host, int port) {
         if(socketReady) {
             return false;
